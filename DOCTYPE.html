@@ -1,0 +1,770 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Abhi Gupta · Software Engineer Portfolio</title>
+    <meta
+      name="description"
+      content="Professional portfolio of Abhi Gupta — Software Engineer specializing in Flutter, Java, and full‑stack development."
+    />
+    <meta name="theme-color" content="#0ea5e9" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Open Graph / Twitter -->
+    <meta property="og:title" content="Abhi Gupta · Software Engineer" />
+    <meta
+      property="og:description"
+      content="Professional portfolio — projects, experience, contact."
+    />
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:image"
+      content="https://picsum.photos/1200/630?grayscale"
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <style>
+      :root {
+        --bg: #0b1020;
+        --surface: #0f172a;
+        --muted: #94a3b8;
+        --text: #e2e8f0;
+        --brand: #0ea5e9;
+        --brand-2: #22d3ee;
+        --ring: #38bdf8;
+        --card: #111827;
+        --shadow: 0 12px 40px rgba(2, 6, 23, 0.55);
+      }
+      :root.light {
+        --bg: #f8fafc;
+        --surface: #ffffff;
+        --muted: #475569;
+        --text: #0f172a;
+        --brand: #0ea5e9;
+        --brand-2: #1d4ed8;
+        --ring: #2563eb;
+        --card: #ffffff;
+        --shadow: 0 12px 40px rgba(2, 6, 23, 0.08);
+      }
+
+      /* Reset */
+      * {
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        height: 100%;
+      }
+      body {
+        margin: 0;
+        font-family: "Inter", system-ui, -apple-system, Segoe UI, Roboto, Arial,
+          sans-serif;
+        color: var(--text);
+        background: radial-gradient(
+            1200px 800px at 20% -10%,
+            rgba(14, 165, 233, 0.12),
+            transparent
+          ),
+          radial-gradient(
+            800px 600px at 110% 10%,
+            rgba(34, 211, 238, 0.12),
+            transparent
+          ),
+          var(--bg);
+        line-height: 1.6;
+      }
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+      img {
+        max-width: 100%;
+        display: block;
+      }
+
+      /* Layout */
+      .container {
+        width: min(1100px, 92vw);
+        margin: 0 auto;
+      }
+      .grid {
+        display: grid;
+        gap: 1.25rem;
+      }
+
+      /* Nav */
+      header {
+        position: sticky;
+        top: 0;
+        z-index: 40;
+        backdrop-filter: saturate(150%) blur(10px);
+      }
+      .nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0.9rem 0;
+      }
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 0.6rem;
+        font-weight: 800;
+        letter-spacing: 0.2px;
+      }
+      .logo {
+        width: 36px;
+        height: 36px;
+        border-radius: 12px;
+        background: linear-gradient(135deg, var(--brand), var(--brand-2));
+        box-shadow: var(--shadow);
+      }
+      .nav a {
+        opacity: 0.9;
+      }
+      .nav-links {
+        display: flex;
+        gap: 1rem;
+        align-items: center;
+      }
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        border: 1px solid rgba(148, 163, 184, 0.25);
+        padding: 0.6rem 0.9rem;
+        border-radius: 12px;
+        transition: 0.2s ease;
+      }
+      .btn:hover {
+        border-color: rgba(148, 163, 184, 0.5);
+        transform: translateY(-1px);
+      }
+      .btn.primary {
+        background: linear-gradient(135deg, var(--brand), var(--brand-2));
+        border: none;
+        color: white;
+        box-shadow: var(--shadow);
+      }
+      .theme-toggle {
+        cursor: pointer;
+        border: 1px solid rgba(148, 163, 184, 0.25);
+        width: 42px;
+        height: 38px;
+        border-radius: 12px;
+        display: grid;
+        place-items: center;
+      }
+
+      /* Hero */
+      .hero {
+        display: grid;
+        grid-template-columns: 1.2fr 0.8fr;
+        gap: 2rem;
+        align-items: center;
+        padding: 3rem 0 2rem;
+      }
+      .headline {
+        font-size: clamp(2rem, 3.8vw, 3.2rem);
+        line-height: 1.1;
+        margin: 0 0 0.8rem;
+        font-weight: 800;
+      }
+      .sub {
+        color: var(--muted);
+        font-size: clamp(1rem, 1.4vw, 1.1rem);
+      }
+      .hero-card {
+        background: linear-gradient(
+          180deg,
+          rgba(255, 255, 255, 0.04),
+          rgba(255, 255, 255, 0)
+        );
+        border: 1px solid rgba(148, 163, 184, 0.18);
+        padding: 1rem;
+        border-radius: 18px;
+        box-shadow: var(--shadow);
+      }
+      .hero img {
+        border-radius: 16px;
+      }
+
+      /* Sections */
+      section {
+        padding: 3rem 0;
+      }
+      .section-title {
+        font-size: 1.6rem;
+        font-weight: 800;
+        margin: 0 0 1rem;
+      }
+      .section-sub {
+        color: var(--muted);
+        margin-bottom: 1.5rem;
+      }
+
+      /* Cards */
+      .cards {
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        gap: 1rem;
+      }
+      .card {
+        grid-column: span 4;
+        background: var(--card);
+        border: 1px solid rgba(148, 163, 184, 0.18);
+        padding: 1rem;
+        border-radius: 16px;
+        transition: 0.25s ease;
+        box-shadow: var(--shadow);
+      }
+      .card:hover {
+        transform: translateY(-3px);
+      }
+      .card h3 {
+        margin: 0.2rem 0 0.6rem;
+        font-size: 1.05rem;
+      }
+      .card .meta {
+        color: var(--muted);
+        font-size: 0.9rem;
+      }
+
+      /* Skills */
+      .skill {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin: 0.6rem 0;
+      }
+      .bar {
+        height: 8px;
+        width: 62%;
+        background: rgba(148, 163, 184, 0.25);
+        border-radius: 999px;
+        overflow: hidden;
+      }
+      .bar > span {
+        display: block;
+        height: 100%;
+        background: linear-gradient(90deg, var(--brand), var(--brand-2));
+        width: 0;
+      }
+
+      /* Timeline */
+      .timeline {
+        border-left: 2px dashed rgba(148, 163, 184, 0.3);
+        padding-left: 1rem;
+      }
+      .timeline .item {
+        position: relative;
+        margin: 1rem 0;
+      }
+      .timeline .item::before {
+        content: "";
+        position: absolute;
+        left: -10px;
+        top: 0.55rem;
+        width: 10px;
+        height: 10px;
+        background: var(--brand);
+        border-radius: 999px;
+        box-shadow: 0 0 0 4px rgba(14, 165, 233, 0.15);
+      }
+
+      /* Projects */
+      .project {
+        display: flex;
+        gap: 1rem;
+        align-items: flex-start;
+        padding: 0.8rem;
+        border-radius: 14px;
+        border: 1px solid rgba(148, 163, 184, 0.18);
+        background: linear-gradient(
+          180deg,
+          rgba(255, 255, 255, 0.03),
+          rgba(255, 255, 255, 0)
+        );
+      }
+      .project img {
+        width: 120px;
+        height: 80px;
+        object-fit: cover;
+        border-radius: 12px;
+      }
+      .project .tags {
+        display: flex;
+        gap: 0.5rem;
+        flex-wrap: wrap;
+      }
+      .tag {
+        font-size: 0.75rem;
+        padding: 0.25rem 0.5rem;
+        border: 1px solid rgba(148, 163, 184, 0.25);
+        border-radius: 999px;
+        color: var(--muted);
+      }
+
+      /* Contact */
+      form {
+        display: grid;
+        gap: 0.8rem;
+      }
+      input,
+      textarea {
+        width: 100%;
+        padding: 0.8rem 1rem;
+        background: var(--surface);
+        border: 1px solid rgba(148, 163, 184, 0.25);
+        border-radius: 12px;
+        color: var(--text);
+        outline: none;
+      }
+      input:focus,
+      textarea:focus {
+        border-color: var(--ring);
+        box-shadow: 0 0 0 4px rgba(56, 189, 248, 0.15);
+      }
+
+      /* Footer */
+      footer {
+        padding: 2rem 0 3rem;
+        color: var(--muted);
+        font-size: 0.95rem;
+      }
+
+      /* Responsive */
+      @media (max-width: 900px) {
+        .hero {
+          grid-template-columns: 1fr;
+        }
+        .cards .card {
+          grid-column: span 6;
+        }
+      }
+      @media (max-width: 640px) {
+        .cards .card {
+          grid-column: span 12;
+        }
+        .nav-links {
+          display: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="container nav">
+        <a href="#home" class="brand">
+          <span class="logo" aria-hidden="true"></span>
+          <span>Abhishek Gupta</span>
+        </a>
+        <nav class="nav-links" aria-label="Primary">
+          <a href="#projects" class="btn">Projects</a>
+          <a href="#experience" class="btn">Experience</a>
+          <a href="#skills" class="btn">Skills</a>
+          <a href="#contact" class="btn">Contact</a>
+          <a href="#" class="btn" id="downloadCV" role="button">Download CV</a>
+          <button
+            class="theme-toggle"
+            id="toggleTheme"
+            aria-label="Toggle theme"
+          >
+            🌗
+          </button>
+        </nav>
+      </div>
+    </header>
+
+    <main id="home" class="container">
+      <!-- Hero -->
+      <section class="hero" aria-labelledby="intro-title">
+        <div>
+          <h1 id="intro-title" class="headline">
+            Java Developer crafting reliable apps & delightful UIs.
+          </h1>
+          <p class="sub">
+            I build robust mobile and web experiences with
+            <strong>Java</strong>, <strong>Java</strong>, and modern web tech. I
+            care about clean architecture, performance, and accessibility.
+          </p>
+          <div style="display: flex; gap: 0.8rem; margin: 1.2rem 0 0">
+            <a href="#projects" class="btn primary">View Projects</a>
+            <a href="#contact" class="btn" role="button">Hire Me</a>
+          </div>
+          <div
+            style="
+              display: flex;
+              gap: 1rem;
+              margin-top: 1rem;
+              color: var(--muted);
+            "
+          >
+            <span>📍 India (IST)</span>
+            <span>✉️ ab882639@gmai.com</span>
+            <span>🔗 https://github.com/Abhigupta7264</span>
+          </div>
+        </div>
+        <div class="hero-card">
+          <img
+            src="https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?q=80&w=1200&auto=format&fit=crop"
+            alt="Laptop on desk with code editor"
+          />
+        </div>
+      </section>
+
+      <!-- Highlights -->
+      <section aria-labelledby="highlight-title">
+        <h2 id="highlight-title" class="section-title">Highlights</h2>
+        <p class="section-sub">Impact, at a glance.</p>
+        <div class="cards">
+          <div class="card" aria-label="Metric 1">
+            <h3>12+ Projects</h3>
+            <p class="meta">
+              Production & academic builds across mobile and web.
+            </p>
+          </div>
+          <div class="card" aria-label="Metric 2">
+            <h3>98% Lighthouse</h3>
+            <p class="meta">Performance & accessibility on recent web work.</p>
+          </div>
+          <div class="card" aria-label="Metric 3">
+            <h3>Open Source</h3>
+            <p class="meta">Contributions to UI components and dev tooling.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Projects -->
+      <section id="projects" aria-labelledby="projects-title">
+        <h2 id="projects-title" class="section-title">Projects</h2>
+        <p class="section-sub">A few case studies. More on request.</p>
+
+        <article class="project" aria-label="Project Card 1">
+          <img
+            src="https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?q=80&w=1200&auto=format&fit=crop"
+            alt="Team collaborating around laptops"
+          />
+          <div>
+            <h3>PulseTrack — Fitness & Habits (Flutter)</h3>
+            <p class="meta">
+              Offline-first habit tracking with charts, reminders, and clean
+              architecture.
+            </p>
+            <div class="tags">
+              <span class="tag">Flutter</span>
+              <span class="tag">Riverpod</span>
+              <span class="tag">SQLite</span>
+              <span class="tag">CI/CD</span>
+            </div>
+            <div style="margin-top: 0.6rem; display: flex; gap: 0.6rem">
+              <a class="btn" href="#" aria-label="View live demo of PulseTrack"
+                >Live</a
+              >
+              <a
+                class="btn"
+                href="#"
+                aria-label="View source code of PulseTrack"
+                >Code</a
+              >
+            </div>
+          </div>
+        </article>
+
+        <article
+          class="project"
+          aria-label="Project Card 2"
+          style="margin-top: 0.8rem"
+        >
+          <img
+            src="https://images.unsplash.com/photo-1518779578993-ec3579fee39f?q=80&w=1200&auto=format&fit=crop"
+            alt="Mobile screens with charts"
+          />
+          <div>
+            <h3>SwiftCart — E‑commerce PWA</h3>
+            <p class="meta">
+              Fast storefront with cart, payments, and responsive design. 98/100
+              Lighthouse.
+            </p>
+            <div class="tags">
+              <span class="tag">HTML</span>
+              <span class="tag">CSS</span>
+              <span class="tag">JavaScript</span>
+              <span class="tag">Service Worker</span>
+            </div>
+            <div style="margin-top: 0.6rem; display: flex; gap: 0.6rem">
+              <a class="btn" href="#" aria-label="View live demo of SwiftCart"
+                >Live</a
+              >
+              <a class="btn" href="#" aria-label="View source code of SwiftCart"
+                >Code</a
+              >
+            </div>
+          </div>
+        </article>
+      </section>
+
+      <!-- Experience -->
+      <section id="experience" aria-labelledby="exp-title">
+        <h2 id="exp-title" class="section-title">Experience</h2>
+        <div class="timeline">
+          <div class="item">
+            <h3>SJava Developer · CoreCard</h3>
+            <p class="meta">Apr 2025 — Jul 2025 · Internship</p>
+            <p>
+              Contributed to backend services and internal dashboards, improving
+              API latency by ~20% with query optimization & caching.
+            </p>
+          </div>
+          <div class="item">
+            <h3>Hackathon ·Web-App</h3>
+            <p class="meta">2023 — Present</p>
+            <p>
+              Developed 5+ client projects end‑to‑end: requirement gathering,
+              UX, development, deployment, and monitoring.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Skills -->
+      <section id="skills" aria-labelledby="skills-title">
+        <h2 id="skills-title" class="section-title">Skills</h2>
+        <div class="grid" style="grid-template-columns: 1fr 1fr">
+          <div>
+            <div class="skill">
+              <span>Flutter / Dart</span>
+              <div class="bar"><span data-progress="90"></span></div>
+            </div>
+            <div class="skill">
+              <span>Java</span>
+              <div class="bar"><span data-progress="85"></span></div>
+            </div>
+            <div class="skill">
+              <span>HTML / CSS</span>
+              <div class="bar"><span data-progress="90"></span></div>
+            </div>
+            <div class="skill">
+              <span>Spring Boot</span>
+              <div class="bar"><span data-progress="80"></span></div>
+            </div>
+          </div>
+          <div>
+            <div class="skill">
+              <span>REST APIs</span>
+              <div class="bar"><span data-progress="85"></span></div>
+            </div>
+            <div class="skill">
+              <span>SQL</span>
+              <div class="bar"><span data-progress="75"></span></div>
+            </div>
+            <div class="skill">
+              <span>Git & CI/CD</span>
+              <div class="bar"><span data-progress="80"></span></div>
+            </div>
+            <div class="skill">
+              <span>Testing</span>
+              <div class="bar"><span data-progress="60"></span></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Education & Certifications -->
+      <section id="education" aria-labelledby="edu-title">
+        <h2 id="edu-title" class="section-title">Education & Certifications</h2>
+        <div class="cards">
+          <div class="card">
+            <h3>B.Tech — Computer Science & Engineering</h3>
+            <p class="meta">
+              Sagar Insitute of Science Technology & Engineering · 2022 — 2026
+            </p>
+            <p>
+              Relevant coursework: Data Structures, Networks, DBMS, OS, OOP,
+              Cloud.
+            </p>
+          </div>
+          <div class="card">
+            <h3>Certifications</h3>
+            <p class="meta">
+              Cisco (CCNA modules), Google Analytics, Flutter courses
+            </p>
+            <p>
+              Focused on networking, security basics, and modern Java App
+              Development.
+            </p>
+          </div>
+          <div class="card">
+            <h3>Awards</h3>
+            <p class="meta">Hackathon Runner-Up · 2024</p>
+            <p>Built Real‑time collaboration tool with WebRTC and Firebase.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact -->
+      <section id="contact" aria-labelledby="contact-title">
+        <h2 id="contact-title" class="section-title">Contact</h2>
+        <p class="section-sub">
+          I’m open to internships and full‑time roles. Send a message and I’ll
+          reply within 24 hours.
+        </p>
+        <form id="contactForm" novalidate>
+          <div class="grid" style="grid-template-columns: 1fr 1fr">
+            <div>
+              <label for="name" class="meta">Name</label>
+              <input
+                id="name"
+                name="name"
+                type="text"
+                required
+                placeholder="Your full name"
+              />
+            </div>
+            <div>
+              <label for="email" class="meta">Email</label>
+              <input
+                id="email"
+                name="email"
+                type="email"
+                required
+                placeholder="you@example.com"
+              />
+            </div>
+          </div>
+          <div>
+            <label for="message" class="meta">Message</label>
+            <textarea
+              id="message"
+              name="message"
+              rows="5"
+              required
+              placeholder="Tell me about the role or project..."
+            ></textarea>
+          </div>
+          <button class="btn primary" type="submit">Send Message</button>
+          <span
+            id="formStatus"
+            class="meta"
+            role="status"
+            aria-live="polite"
+            style="margin-left: 0.8rem"
+          ></span>
+        </form>
+      </section>
+    </main>
+
+    <footer>
+      <div
+        class="container"
+        style="
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          gap: 1rem;
+          flex-wrap: wrap;
+        "
+      >
+        <div>© <span id="year"></span> · Built by Abhishek Gupta</div>
+        <div style="display: flex; gap: 0.8rem">
+          <a class="btn" href="https://github.com/Abhigupta7264">GitHub</a>
+          <a
+            class="btn"
+            href="https://www.linkedin.com/in/abhishek-gupta-a925462a2
+
+"
+            >LinkedIn</a
+          >
+          <a
+            class="btn"
+            href="C:\Users\HP\Downloads\Abhishek_Kumar_Resume (1).pdf"
+            >Resume</a
+          >
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      // --- Theme Toggle with localStorage ---
+      const root = document.documentElement;
+      const toggle = document.getElementById("toggleTheme");
+      const storedTheme = localStorage.getItem("theme") || "dark";
+      if (storedTheme === "light") root.classList.add("light");
+      toggle?.addEventListener("click", () => {
+        root.classList.toggle("light");
+        localStorage.setItem(
+          "theme",
+          root.classList.contains("light") ? "light" : "dark"
+        );
+      });
+
+      // --- Year ---
+      document.getElementById("year").textContent = new Date().getFullYear();
+
+      // --- Skills progress animation on view ---
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((e) => {
+            if (e.isIntersecting) {
+              e.target.querySelectorAll("[data-progress]").forEach((bar) => {
+                bar.style.width = bar.dataset.progress + "%";
+                bar.style.transition = "width 1s cubic-bezier(.2,.8,.2,1)";
+              });
+              observer.unobserve(e.target);
+            }
+          });
+        },
+        { threshold: 0.3 }
+      );
+      document
+        .querySelectorAll("#skills")
+        .forEach((sec) => observer.observe(sec));
+
+      // --- Contact form (client-side only) ---
+      const form = document.getElementById("contactForm");
+      const statusEl = document.getElementById("formStatus");
+      form?.addEventListener("submit", (e) => {
+        e.preventDefault();
+        const data = Object.fromEntries(new FormData(form).entries());
+        if (!data.name || !data.email || !data.message) {
+          statusEl.textContent = "Please fill out all fields.";
+          return;
+        }
+        // Simulate success. Replace with fetch('/api/contact', { method:'POST', body: JSON.stringify(data) })
+        statusEl.textContent = "Thanks! Your message has been sent.";
+        form.reset();
+      });
+
+      // --- Download CV (replace with your file path) ---
+      document.getElementById("downloadCV")?.addEventListener("click", (e) => {
+        e.preventDefault();
+        // Replace with your resume file
+        const resumeUrl = "Abhishek Resume.pdf";
+        const a = document.createElement("a");
+        a.href = resumeUrl;
+        a.download = "Abhishek-Gupta-Resume.pdf";
+        document.body.appendChild(a);
+        a.click();
+        a.remove();
+      });
+
+      // --- Smooth anchor scroll ---
+      document.querySelectorAll('a[href^="#"]').forEach((a) => {
+        a.addEventListener("click", function (e) {
+          const id = this.getAttribute("href");
+          if (!id || id === "#") return;
+          const el = document.querySelector(id);
+          if (el) {
+            e.preventDefault();
+            window.scrollTo({ top: el.offsetTop - 70, behavior: "smooth" });
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
